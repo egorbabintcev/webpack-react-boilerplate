@@ -21,13 +21,14 @@ module.exports = {
     ]
   },
   output: {
-    filename: './js/[name].[hash].js',
+    filename: './js/[name].js',
+    chunkFilename: './js/[name].js',
     path: path.resolve(__dirname, PATHS.public),
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
         loader: 'babel-loader'
       },
@@ -54,7 +55,7 @@ module.exports = {
                 includePaths: [
                   'node_modules'
                 ]
-              }              
+              }
             }
           }
         ]
@@ -88,16 +89,16 @@ module.exports = {
     }
   },
   plugins: [
-    new FriendlyErrorsWebpackPlugin(),    
+    new FriendlyErrorsWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: './css/app.[hash].css'
+      filename: './css/app.css'
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: './img' },
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: './fonts' },
       { from: `${PATHS.src}/other`, to: './' }
     ]),
-    ...PAGES.map(page => {      
+    ...PAGES.map(page => {
       return new HtmlWebpackPlugin({
         filename: `${page.match(/(?<=src\/views\/pages\/).*(?=\.pug$)/g)}.html`,
         template: page,

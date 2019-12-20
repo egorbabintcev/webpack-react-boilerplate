@@ -1,9 +1,9 @@
 # Webpack boilerplate
-It's a simple webpack boilerplate for simple webpack, which can help you to increase your development speed.
+It's a simple webpack boilerplate with React support, which can help you to increase your react.js development speed.
 ## How to install
 ```
 # Clone this project
-git clone https://github.com/egorbabintcev/webpack-boilerplate.git
+git clone https://github.com/egorbabintcev/webpack-react-boilerplate.git
 
 # Select directory
 cd webpack boilerplate
@@ -28,6 +28,7 @@ yarn build:prod
 - `src/views/includes`  templates to include to markup
 - `src/views/layouts`   base layouts for pages
 - `src/js`  scripts for your website | entry point is main.js
+- `src/js/components`   components for your react app
 - `src/assets/img`  put your images here
 - `src/assets/fonts`  put your fonts here
 - `src/other`   put your static files (like sitemap.xml, favicon.ico or robots.txt) here
